@@ -1,30 +1,49 @@
-# Literacy Rate Impact Analysis.
-This project is aligned with **SDG 4: Quality Education** and aims to predict a region’s literacy rate based on government spending on primary education and the number of schools per 1000 children. It also addresses skewed data distributions by applying Log Transformation to ensure the data meets the assumption of normality.
+# Literacy Rate Impact Analysis
 
+This project is aligned with **SDG 4: Quality Education** and focuses on predicting regional literacy rates based on primary education infrastructure and government expenditure.
 
-🎯 Project Objective
+## Project Objective
 
-The main objective of this project is to:
+* Analyze the impact of primary education investment and infrastructure on literacy rate.
+* Predict literacy rate using statistical and machine learning techniques.
+* Apply log transformation to handle skewed data and satisfy normality assumptions.
+* Support data-driven education policy decisions.
 
-Analyze the impact of primary education infrastructure on literacy rate.
+## Tools and Libraries Used
 
-Predict literacy rate using statistical and machine learning techniques.
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
 
-Understand how factors such as school availability and education investment influence literacy outcomes.
+These libraries were used for data preprocessing, visualization, and model evaluation.
 
-Support data-driven decision-making in education policy.
+## Methodology
 
-📊 Dataset
+1. Data cleaning and preprocessing
+2. Exploratory Data Analysis (EDA)
+3. Log transformation for skewed features
+4. Regression model development
+5. Model evaluation using R², MAE, and MSE
 
-The dataset used in this project includes:
+## Repository Structure
 
-Literacy rate
+```
+Literacy-Rate-Impact-Analysis
+│
+├── contributions/
+│   └── Individual team member work
+│
+├── literacy_rate_prediction.ipynb
+│   └── Final compiled notebook with complete analysis and results
+├── literacy_rate_data.csv
+│
+└── README.md
+```
 
-Number of primary schools
+* The `contributions/` folder contains all individual team member work.
+* `literacy_rate_prediction.ipynb` contains the final integrated analysis, modeling, and evaluation.
 
+## SDG Alignment
 
-
-
-Enrollment data
-
-Schools per 1000 children
+This project supports **SDG 4: Quality Education**, aiming to promote inclusive and equitable quality education for all.
