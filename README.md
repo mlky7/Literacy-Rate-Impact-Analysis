@@ -1,64 +1,58 @@
-# Literacy Rate Impact Analysis 📊
+# Literacy Rate Impact Analysis
 
-## 📌 Project Overview
-This project analyzes the impact of literacy rate on:
-- GDP
-- Unemployment Rate
+This project is aligned with **SDG 4: Quality Education** and focuses on predicting regional literacy rates based on primary education infrastructure and government expenditure.
 
-The goal is to understand how education levels influence economic growth and employment.
+## Project Objective
 
----
+* Analyze the impact of primary education investment and infrastructure on literacy rate.
+* Predict literacy rate using statistical and machine learning techniques.
+* Apply log transformation to handle skewed data and satisfy normality assumptions.
+* Support data-driven education policy decisions.
 
-## 📂 Project Structure
+## Dataset
+
+The dataset includes:
+
+* Literacy Rate
+* Government Expenditure on Primary Education
+* Number of Primary Schools
+* Enrollment Data
+* Schools per 1000 Children
+
+## Tools and Libraries Used
+
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+
+These libraries were used for data preprocessing, visualization, and model evaluation.
+
+## Methodology
+
+1. Data cleaning and preprocessing
+2. Exploratory Data Analysis (EDA)
+3. Log transformation for skewed features
+4. Regression model development
+5. Model evaluation using R², MAE, and MSE
+
+## Repository Structure
+
 ```
-Literacy_Rate_Impact_Analysis/
+Literacy-Rate-Impact-Analysis
 │
-├── literacy_rate_impact_analysis.py
-├── literacy_rate_impact_analysis.ipynb
-├── literacy_data.csv
-├── requirements.txt
+├── contributions/
+│   └── Individual team member work
+│
+├── literacy_rate_prediction.ipynb
+│   └── Final compiled notebook with complete analysis and results
+│
 └── README.md
 ```
 
----
+* The `contributions/` folder contains all individual team member work.
+* `literacy_rate_prediction.ipynb` contains the final integrated analysis, modeling, and evaluation.
 
-## 📊 Features
-- Data Cleaning
-- Missing Value Detection
-- Duplicate Removal
-- Negative Value Checking
-- Correlation Analysis
-- Data Visualization using Matplotlib
+## SDG Alignment
 
----
-
-## 🚀 How to Run
-
-### Install Requirements
-```
-pip install -r requirements.txt
-```
-
-### Run Python Script
-```
-python literacy_rate_impact_analysis.py
-```
-
----
-
-## 📈 Output Graphs
-- Literacy Rate vs GDP
-- Literacy Rate vs Unemployment Rate
-- Correlation Matrix Heatmap
-
----
-
-## 📚 Technologies Used
-- Python
-- Pandas
-- Matplotlib
-
----
-
-## 🎯 Conclusion
-Higher literacy rates generally show positive economic impact and lower unemployment trends (based on sample data).
+This project supports **SDG 4: Quality Education**, aiming to promote inclusive and equitable quality education for all.
