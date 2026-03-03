@@ -15,8 +15,6 @@ The dataset includes:
 
 * Literacy Rate
 * Government Expenditure on Primary Education
-* Number of Primary Schools
-* Enrollment Data
 * Schools per 1000 Children
 
 ## Tools and Libraries Used
