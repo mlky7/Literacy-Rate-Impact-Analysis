@@ -1,0 +1,52 @@
+Name: NEHA NAIK C G
+USN:  4AI22AI036
+Topic: Polynomial Regression
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score, mean_squared_error
+from scipy.stats import skew
+np.random.seed(42)
+data = pd.DataFrame({
+    'Govt_Spending': np.random.gamma(shape=2.0, scale=5000, size=100),  
+    'Schools_per_1000': np.random.gamma(shape=2.5, scale=2.0, size=100)  
+})
+data['Literacy_Rate'] = (
+    40 
+    + 0.003 * data['Govt_Spending'] 
+    + 2 * data['Schools_per_1000'] 
+    + 0.0000001 * data['Govt_Spending']**2
+    + np.random.normal(0, 5, 100)
+)
+print("Skewness before log transformation:")
+print(data[['Govt_Spending', 'Schools_per_1000']].apply(skew))
+data['Log_Govt_Spending'] = np.log1p(data['Govt_Spending'])
+data['Log_Schools'] = np.log1p(data['Schools_per_1000'])
+print("\nSkewness after log transformation:")
+print(data[['Log_Govt_Spending', 'Log_Schools']].apply(skew))
+X = data[['Log_Govt_Spending', 'Log_Schools']]
+y = data['Literacy_Rate']
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+poly = PolynomialFeatures(degree=2)
+X_train_poly = poly.fit_transform(X_train)
+X_test_poly = poly.transform(X_test)
+model = LinearRegression()
+model.fit(X_train_poly, y_train)
+y_pred = model.predict(X_test_poly)
+r2 = r2_score(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+print("\nModel Performance:")
+print("R2 Score:", r2)
+print("Mean Squared Error:", mse)
+plt.scatter(y_test, y_pred)
+plt.xlabel("Actual Literacy Rate")
+plt.ylabel("Predicted Literacy Rate")
+plt.title("Polynomial Regression - Actual vs Predicted")
+plt.show()
+
